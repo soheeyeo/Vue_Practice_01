@@ -4,17 +4,9 @@
             <a v-for="i in 메뉴들" :key="i">{{ i }}</a>
         </div>
 
-        <div>
-            <h4>{{ products[0] }}</h4>
+        <div v-for="(a,i) in 3" :key="i">
+            <h4>{{ products[i] }}</h4>
             <p>70 만원</p>
-        </div>
-        <div>
-            <h4>{{ products[1] }}</h4>
-            <p>50 만원</p>
-        </div>
-                <div>
-            <h4>{{ products[2] }}</h4>
-            <p>60 만원</p>
         </div>
     </div>
 </template>
@@ -25,7 +17,7 @@ export default {
     name: 'App',
     data(){
         return {
-            메뉴들 :['Home', 'Shop', 'About'],
+            메뉴들 : ['Home', 'Shop', 'About'],
             products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
         }
     },
