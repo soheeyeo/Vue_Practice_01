@@ -9,9 +9,23 @@
             <p>70 만원</p>
         </div> -->
 
-        <div v-for="(a, i) in products" :key="i">
+        <!-- <div v-for="(a, i) in products" :key="i">
             <h4>{{ a }}</h4>
             <p>70 만원</p>
+        </div> -->
+
+        <div>
+            <h4>{{ products[0] }}</h4>
+            <p>50만원</p>
+            <button v-on:click="신고수++">허위매물신고</button> <span>신고수: {{ 신고수 }}</span>
+        </div>
+                <div>
+            <h4>{{ products[1] }}</h4>
+            <p>60만원</p>
+        </div>
+                <div>
+            <h4>{{ products[2] }}</h4>
+            <p>70만원</p>
         </div>
     </div>
 </template>
@@ -22,6 +36,7 @@ export default {
     name: 'App',
     data(){
         return {
+            신고수 : 0,
             메뉴들 : ['Home', 'Shop', 'About'],
             products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
         }
