@@ -17,7 +17,7 @@
         <div>
             <h4>{{ products[0] }}</h4>
             <p>50만원</p>
-            <button v-on:click="신고수++">허위매물신고</button> <span>신고수: {{ 신고수 }}</span>
+            <button v-on:click="increase">허위매물신고</button> <span>신고수: {{ 신고수 }}</span>
         </div>
                 <div>
             <h4>{{ products[1] }}</h4>
@@ -39,6 +39,11 @@ export default {
             신고수 : 0,
             메뉴들 : ['Home', 'Shop', 'About'],
             products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
+        }
+    },
+    methods: {
+        increase(){
+            this.신고수 += 1;
         }
     },
     components: {
