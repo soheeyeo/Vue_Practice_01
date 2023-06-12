@@ -23,9 +23,9 @@
         </div> -->
 
         <div>
-            <img src="./assets/room0.jpg" class="room-img">
-            <h4 @click="모달창열렸니 = true">{{ products[0] }}</h4>
-            <p>50만원</p>
+            <img :src="원룸들[0].image" class="room-img">
+            <h4 @click="모달창열렸니 = true">{{ 원룸들[0].title }}</h4>
+            <p>{{ 원룸들[0].price }}원</p>
             <button v-on:click="신고수[0]++">허위매물신고</button> <span>신고수: {{ 신고수[0] }}</span>
         </div>
         <div>
@@ -45,11 +45,14 @@
 
 <script>
 
+import data from './assets/oneroom.js';
+
 export default {
     name: 'App',
     data(){
         return {
-            모달창열렸니 : true,
+            원룸들 : data,
+            모달창열렸니 : false,
             신고수 : [0, 0, 0],
             메뉴들 : ['Home', 'Shop', 'About'],
             products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
