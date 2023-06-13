@@ -22,13 +22,13 @@
             <p>70 만원</p>
         </div> -->
 
-        <div>
+        <div v-for="(a, i) in 원룸들" :key="i">
             <img :src="원룸들[0].image" class="room-img">
-            <h4 @click="모달창열렸니 = true">{{ 원룸들[0].title }}</h4>
-            <p>{{ 원룸들[0].price }}원</p>
-            <button v-on:click="신고수[0]++">허위매물신고</button> <span>신고수: {{ 신고수[0] }}</span>
+            <h4 @click="모달창열렸니 = true">{{ a.title }}</h4>
+            <p>{{ a.price }}원</p>
+            <!-- <button v-on:click="신고수[0]++">허위매물신고</button> <span>신고수: {{ 신고수[0] }}</span> -->
         </div>
-        <div>
+        <!-- <div>
             <img src="./assets/room1.jpg" class="room-img">
             <h4>{{ products[1] }}</h4>
             <p>60만원</p>
@@ -39,7 +39,7 @@
             <h4>{{ products[2] }}</h4>
             <p>70만원</p>
             <button v-on:click="신고수[2]++">허위매물신고</button> <span>신고수: {{ 신고수[2] }}</span>
-        </div>
+        </div> -->
     </div>
 </template>
 
