@@ -2,7 +2,7 @@
     <div>
         <div class="black-bg" v-if="모달창열렸니 == true">
             <div class="white-bg">
-                <h4>상세페이지임</h4>
+                <h4>{{ 원룸들[누른거].title }}</h4>
                 <p>상세페이지 내용임</p>
                 <button v-on:click="모달창열렸니 = false">닫기</button>
             </div>
@@ -23,8 +23,8 @@
         </div> -->
 
         <div v-for="(a, i) in 원룸들" :key="i">
-            <img :src="원룸들[0].image" class="room-img">
-            <h4 @click="모달창열렸니 = true">{{ a.title }}</h4>
+            <img :src="a.image" class="room-img">
+            <h4 @click="모달창열렸니 = true; 누른거 = i">{{ a.title }}</h4>
             <p>{{ a.price }}원</p>
             <!-- <button v-on:click="신고수[0]++">허위매물신고</button> <span>신고수: {{ 신고수[0] }}</span> -->
         </div>
@@ -51,6 +51,7 @@ export default {
     name: 'App',
     data(){
         return {
+            누른거 : 0,
             원룸들 : data,
             모달창열렸니 : false,
             신고수 : [0, 0, 0],
