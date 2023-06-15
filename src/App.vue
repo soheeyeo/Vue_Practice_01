@@ -14,6 +14,8 @@
             <a v-for="i in 메뉴들" :key="i">{{ i }}</a>
         </div>
 
+        <Discount/>
+
         <!-- <div v-for="(a,i) in 3" :key="i">
             <h4>{{ products[i] }}</h4>
             <p>70 만원</p>
@@ -48,6 +50,7 @@
 <script>
 
 import data from './assets/oneroom.js';
+import Discount from './Discount.vue';
 
 export default {
     name: 'App',
@@ -67,7 +70,7 @@ export default {
         }
     },
     components: {
-    
+        Discount : Discount,
     }
 }
 </script>
@@ -79,6 +82,13 @@ body {
 
 div {
     box-sizing: border-box;
+}
+
+.discount{
+    background: #eee;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
 }
 
 .black-bg {
