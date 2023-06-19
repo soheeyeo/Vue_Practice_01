@@ -18,12 +18,19 @@
             <p>70 만원</p>
         </div> -->
 
-        <div v-for="(a, i) in 원룸들" :key="i">
+        <Card :원룸="원룸들[0]" />
+        <Card :원룸="원룸들[1]" />
+        <Card :원룸="원룸들[2]" />
+        <Card :원룸="원룸들[3]" />
+        <Card :원룸="원룸들[4]" />
+        <Card :원룸="원룸들[5]" />
+
+        <!-- <div v-for="(a, i) in 원룸들" :key="i">
             <img :src="a.image" class="room-img">
             <h4 @click="모달창열렸니 = true; 누른거 = i">{{ a.title }}</h4>
             <p>{{ a.price }}원</p>
-            <!-- <button v-on:click="신고수[0]++">허위매물신고</button> <span>신고수: {{ 신고수[0] }}</span> -->
-        </div>
+            <button v-on:click="신고수[0]++">허위매물신고</button> <span>신고수: {{ 신고수[0] }}</span>
+        </div> -->
         <!-- <div>
             <img src="./assets/room1.jpg" class="room-img">
             <h4>{{ products[1] }}</h4>
@@ -44,6 +51,7 @@
 import data from './assets/oneroom.js';
 import Discount from './Discount.vue';
 import Modal from './Modal.vue';
+import Card from './Card.vue';
 
 export default {
     name: 'App',
@@ -65,6 +73,7 @@ export default {
     components: {
         Discount : Discount,
         Modal : Modal,
+        Card : Card,
     }
 }
 </script>
