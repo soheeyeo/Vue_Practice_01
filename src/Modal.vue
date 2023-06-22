@@ -4,7 +4,7 @@
             <h4>{{ 원룸들[누른거].title }}</h4>
             <img :src="원룸들[누른거].image" class="room-img">
             <p>{{ 원룸들[누른거].content }}</p>
-            <input @input="month = $event.target.value">
+            <input v-model="month">
             <p> {{ month }}개월 선택함 : {{ 원룸들[누른거].price * month }} 원</p>
 
             <button @click="$emit('closeModal')">닫기</button>
