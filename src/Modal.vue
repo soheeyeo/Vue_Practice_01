@@ -20,6 +20,13 @@ export default {
             month : 1,
         }
     },
+    watch : {
+        month(a) {
+            if (a > 12){
+                alert('12 이하로 입력해주세요')
+            }
+        },
+    },
     props : {
         원룸들 : Array,
         누른거 : Number,
