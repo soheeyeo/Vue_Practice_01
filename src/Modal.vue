@@ -22,8 +22,9 @@ export default {
     },
     watch : {
         month(a) {
-            if (a > 12){
-                alert('12 이하로 입력해주세요')
+            if (isNaN(a) == true){
+                alert('숫자만 입력해주세요');
+                this.month = 1;
             }
         },
     },
