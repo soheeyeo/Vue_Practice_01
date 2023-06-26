@@ -82,6 +82,18 @@ export default {
 </script>
 
 <style>
+.fade-leave-from {
+    opacity: 1;
+}
+
+.fade-leave-active {
+    transition: all 1s;
+}
+
+.fade-leave-to {
+    opacity: 0;
+}
+
 .fade-enter-from {
     opacity: 0;
 }
