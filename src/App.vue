@@ -1,6 +1,8 @@
 <template>
     <div>
-        <Modal @closeModal="모달창열렸니 = false" :원룸들="원룸들" :누른거="누른거" :모달창열렸니="모달창열렸니" />
+        <div class="start" :class="{ end : 모달창열렸니 }">
+            <Modal @closeModal="모달창열렸니 = false" :원룸들="원룸들" :누른거="누른거" :모달창열렸니="모달창열렸니" />
+        </div>
 
         <div class="menu">
             <a v-for="i in 메뉴들" :key="i">{{ i }}</a>
@@ -80,6 +82,16 @@ export default {
 </script>
 
 <style>
+
+.start {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.end {
+    opacity: 1;
+}
+
 body {
     margin: 0;
 }
