@@ -8,7 +8,7 @@
             <a v-for="i in 메뉴들" :key="i">{{ i }}</a>
         </div>
 
-        <Discount/>
+        <Discount v-if="showDiscount == true" />
 
         <button @click="lowPriceSort">낮은 가격순</button>
         <button @click="highPriceSort">높은 가격순</button>
@@ -65,6 +65,7 @@ export default {
     name: 'App',
     data(){
         return {
+            showDiscount : true,
             원룸들오리지널 : [...data],
             누른거 : 0,
             원룸들 : data,
@@ -97,6 +98,13 @@ export default {
             })
         }
     },
+
+    mounted(){
+        setTimeout(()=>{
+            this.showDiscount = false;
+        }, 2000);
+    },
+
     components: {
         Discount : Discount,
         Modal : Modal,
