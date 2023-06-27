@@ -10,7 +10,9 @@
 
         <Discount/>
 
-        <button @click="priceSort">가격순정렬</button>
+        <button @click="lowPriceSort">낮은 가격순</button>
+        <button @click="highPriceSort">높은 가격순</button>
+        <button @click="alphabeticalSort">가나다순</button>
         <button @click="sortBack">되돌리기</button>
 
         <!-- <div v-for="(a,i) in 3" :key="i">
@@ -79,11 +81,21 @@ export default {
         sortBack(){
             this.원룸들 = [...this.원룸들오리지널];
         },
-        priceSort(){
+        lowPriceSort(){
             this.원룸들.sort(function(a, b){
                 return a.price - b.price
             })
         },
+        highPriceSort(){
+            this.원룸들.sort(function(a, b){
+                return b.price - a.price
+            })
+        },
+        alphabeticalSort(){
+            this.원룸들.sort(function(a, b){
+                return a.title.localeCompare(b.title)
+            })
+        }
     },
     components: {
         Discount : Discount,
