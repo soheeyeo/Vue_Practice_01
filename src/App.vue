@@ -77,7 +77,7 @@ export default {
             this.신고수 += 1;
         },
         sortBack(){
-            this.원룸들 = this.원룸들오리지널;
+            this.원룸들 = [...this.원룸들오리지널];
         },
         priceSort(){
             this.원룸들.sort(function(a, b){
