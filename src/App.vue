@@ -10,6 +10,8 @@
 
         <Discount/>
 
+        <button @click="priceSort">가격순정렬</button>
+
         <!-- <div v-for="(a,i) in 3" :key="i">
             <h4>{{ products[i] }}</h4>
             <p>70 만원</p>
@@ -71,7 +73,12 @@ export default {
     methods: {
         increase(){
             this.신고수 += 1;
-        }
+        },
+        priceSort(){
+            this.원룸들.sort(function(a, b){
+                return a.price - b.price
+            })
+        },
     },
     components: {
         Discount : Discount,
