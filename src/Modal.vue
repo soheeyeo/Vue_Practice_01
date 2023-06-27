@@ -28,6 +28,12 @@ export default {
             }
         },
     },
+    beforeUpdate(){
+        if(this.month == 2){
+            alert('3개월 이상 가능합니다.')
+            this.month = 3;
+        }
+    },
     props : {
         원룸들 : Array,
         누른거 : Number,
