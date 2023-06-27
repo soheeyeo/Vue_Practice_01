@@ -8,7 +8,7 @@
             <a v-for="i in 메뉴들" :key="i">{{ i }}</a>
         </div>
 
-        <Discount v-if="showDiscount == true" />
+        <Discount v-if="showDiscount == true" :할인율="할인율" />
 
         <button @click="lowPriceSort">낮은 가격순</button>
         <button @click="highPriceSort">높은 가격순</button>
@@ -65,6 +65,7 @@ export default {
     name: 'App',
     data(){
         return {
+            할인율 : 30,
             showDiscount : true,
             원룸들오리지널 : [...data],
             누른거 : 0,
@@ -96,13 +97,16 @@ export default {
             this.원룸들.sort(function(a, b){
                 return a.title.localeCompare(b.title)
             })
-        }
+        },
     },
 
     mounted(){
-        setTimeout(()=>{
-            this.showDiscount = false;
-        }, 2000);
+        this.timer = setInterval(() => {
+            this.할인율--;
+            if(this.할인율 < 1) {
+                clearInterval(this.timer);
+            }
+        }, 1000);
     },
 
     components: {
